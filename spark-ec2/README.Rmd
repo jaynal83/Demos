@@ -1,8 +1,7 @@
 ---
-Title: "Untitled"
+Title: "Starting a SparkR cluster on Amazon Elastic Cloud Compute (EC2) within RStudio"
 Author: "Daniel Emaasit"
 Date: "October 25, 2015"
-output: html_document
 ---
 
 ## Starting a SparkR cluster on Amazon Elastic Cloud Compute (EC2) within RStudio
