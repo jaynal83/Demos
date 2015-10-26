@@ -9,7 +9,7 @@ This repository stores all the files and data used in the demos for several prod
 
 For more information, please visit our company blog at: <http://blog.sparkiq-labs.com/>.
 
-### Licensee
+### License
 
 **The MIT License (MIT)**
 
