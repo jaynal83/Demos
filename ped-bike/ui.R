@@ -210,19 +210,7 @@ shinyUI(navbarPage('Pedestrian and Bike Safety in Tennessee',
                                   Engineering at UNLV. His research interest is data mining of 
                                   “Big” Transportation data to extract new insights, patterns & 
                                   knowledge that can be used to improve road safety, traffic operations 
-                                  and planning."),
-                                         h3("Simon Sirin"),
-                                         img(src="simon.jpg", height=112, width=112),
-                                         br(),
-                                         br(),
-                                         p("Simon is an", a("MBA student", href="https://www.linkedin.com/in/simonsirin"), "at UNLV. He is
-                                           a certified Professional Electrical Engineer (P.E) and Project Management Professional (PMP)."),
-                                         h3("Andrea Esguerra"),
-                                         img(src="andrea.jpg", height=112, width=112),
-                                         br(),
-                                         br(),
-                                         p("Andrea is an", a("MBA student", href="https://www.linkedin.com/pub/andrea-esguerra/40/706/6a0"), 
-                                           "at UNLV. She is also an Institutional Research/Business Intelligence Analyst at UNLV")
+                                  and planning.")
                                          
                                  ),
                                  
