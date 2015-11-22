@@ -4,7 +4,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Hello Shiny!"),
+  titlePanel("Shiny and SparkR!"),
   
   # Sidebar with a slider input for the number of bins
   sidebarLayout(
@@ -13,16 +13,16 @@ shinyUI(fluidPage(
       # add some help text
       h3("Get Started"),
       
-      p("You can use this application to predict the sepal length of a flower")
+      p("This is a simple application that demonstrates how to use Apache SparkR to power
+        a shiny application")
       
       ),
     
     mainPanel(
       
       # add a selection box for selecting a county
-      h3("Pedestrian Crash Prediction Based on Economic Factors"),
-      p("Select a set of input variables below to predict the number of fatal
-        crashes in Tennessee"),
+      h3("Prediction of Sepal Length of Flowers"),
+      p("Select a set of input variables below to predict the sepal lenght of flowers"),
       
       fluidRow(
         column(3,
