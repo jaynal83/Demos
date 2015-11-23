@@ -3,6 +3,8 @@ Title: "Using Apache SparkR to power Shiny Applications: Part I"
 Author: Daniel Emaasit
 ---
 
+![Shiny-spark-logo](img/shiny-spark-logo.png)
+
 # Introduction
 
 The objective of this document is demonstrate how to use [Apache SparkR](http://spark.apache.org) to power [Shiny application](http://shiny.rstudio.com).
