@@ -109,3 +109,50 @@ shinyServer(function(input, output) {
   
 })
 ```
+
+# What happens Underneath.
+
+1. **Stage 1:** When you run the app, the user interface is displayed but without the rendered text or model summary.
+
+![App without the results](img/no-result.png)
+
+2. **Stage 2:** Meanwhile, in the background on your computer node(s), java is launched using the Spark-submit file, then the SparkR library is loaded and then SparkR is initialized.
+
+![SparkR is initialized](img/java-launch.png)
+
+3. **Stage 3:** SparkR commands in the Server.R file are then executed, which finally shows the output within the shiny app.
+
+![Results in the App](img/app.png)
+
+You can use the Spark UI to check the jobs that were completed, in the event timeline, to produce the final results in the shiny app. Go to localhost and listen on port 4040.
+
+![Results in the App](img/event-timeline.png)
+
+4. **Stage 4:** When you change the input values in the app and click the "Predict Sepal Length" button, the application uses the alreading exciting Spark Context to run the predict function and displays the predicted. This operations takes a shorter time than the initial launch of the shiny app.
+
+![Change values](img/new-result.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
