@@ -5,14 +5,14 @@ Author: Daniel Emaasit
 
 # Introduction
 
-The objective of this document is demonstrate how to use Apache SparkR <http://spark.apache.org> to power Shiny application <http://shiny.rstudio.com>.
+The objective of this document is demonstrate how to use [Apache SparkR](http://spark.apache.org) to power [Shiny application](http://shiny.rstudio.com).
 
-SparkR is 
+**SparkR** is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. (similar to R data frames, dplyr) but on large datasets. SparkR also supports distributed machine learning using MLlib. 
 
-Shiny is 
+**Shiny** is an open source R package that provides an elegant and powerful web framework for building web applications using R. Shiny helps you turn your analyses into interactive web applications without requiring HTML, CSS, or JavaScript knowledge. 
 
 # Uses Cases
-So you're probabling asking yourself, why would I need to use SparkR to run my Shiny applications?. That is a legitimate question. But before we answer it, let's first describe the classes of big data problems.
+So you're probabling asking yourself, why would I need to use SparkR to run my Shiny applications?. That is a legitimate question and to answer it, we need to understand the different classes of big data problems.
 
 ## Classes of Big Data Problems
 
@@ -20,11 +20,11 @@ In a recent [AMA on Reddit](http://bit.ly/1LbWPhl), [Hadley Wickham]((http://had
 
 I believe big data problems should be categrized in 3 main classes:
 
-1. **Big Data - Small Learning**. This is where a data scientist begins with a raw big dataset and then slices and dices that data to obtain the right sample required to answer a specific business/research problem. In most cases the resulting sample is a small dataset, which **doesnot** require SparkR to deploy a shiny application.
+1. **Big Data-Small Analytics:** This is where a data scientist begins with a raw big dataset and then slices and dices that data to obtain the right sample required to answer a specific business/research problem. In most cases the resulting sample is a small dataset, which **doesnot** require SparkR to deploy a shiny application.
 
-2. **Partition Aggregrate**. This is where a data scientist needs to distribute and parallelize computation over multiple machines. Wickham defines this problem as a trivially parallelisable problem. An example is when you need to fit one model per individual for thousands of individuals.  In this case SparkR is a good fit but there are also packages in R that solve this problem such as the [foreach package](https://cran.r-project.org/web/packages/foreach/index.html).
+2. **Partition Aggregrate Analytics:** This is where a data scientist needs to distribute and parallelize computation over multiple machines. Wickham defines this problem as a **trivially parallelisable problem**. An example is when you need to fit one model per individual for thousands of individuals.  In this case SparkR is a good fit but there are also packages in R that solve this problem such as the [foreach package](https://cran.r-project.org/web/packages/foreach/index.html).
 
-3. **Large Scale Learning**. This is where a data scientist needs all the big data, perhaps because you fitting a complex model. An example of this type of problem is recommender systems which really do benefit from lots of data because they need to recognise interactions that occur only rarely. SparkR is a perfect fit for this problem when developing Shiny applications.
+3. **Big Data-Large Scale Analytics**. This is where a data scientist needs all the big data, perhaps because you fitting a complex model. An example of this type of problem is recommender systems which really do benefit from lots of data because they need to recognise interactions that occur only rarely. SparkR is a perfect fit for this problem when developing Shiny applications.
 
 ## Memory Considerations
 
@@ -43,13 +43,13 @@ Before we start understanding how each piece of such an application would operat
 2. Make sure you have Java 1.7.x installed and the environment variables are set.
 
 ## Launch the App
-Once you have downloaded the app-folder, open the project in RStudio and open the **"server.R"**" file.
+Once you have downloaded the app-folder, open the project in RStudio and open the **"server.R"** file.
 
 1. **Change Spark Home**. Change the path of SPARK_HOME to point to where you installed Spark.
 
 ![Change Spark home](img/spark-home.png)
 
-2. ** Run the App**. Run the shiny app by using this command `shiny::runApp()`. It will take some time for SparkR to be initialized before you can see the results of the underlying analysis are displayed.
+2. **Run the App**. Run the shiny app by using this command `shiny::runApp()`. It will take some time for SparkR to be initialized before you can see the results of the underlying analysis are displayed.
 
 ![The App](img/app.png)
 
@@ -114,7 +114,7 @@ shinyServer(function(input, output) {
 
 1. **Stage 1:** When you run the app, the user interface is displayed but without the rendered text or model summary.
 
-![App without the results](img/no-result.png)
+![App without the results](img/no-results.png)
 
 2. **Stage 2:** Meanwhile, in the background on your computer node(s), java is launched using the Spark-submit file, then the SparkR library is loaded and then SparkR is initialized.
 
@@ -128,31 +128,12 @@ You can use the Spark UI to check the jobs that were completed, in the event tim
 
 ![Results in the App](img/event-timeline.png)
 
-4. **Stage 4:** When you change the input values in the app and click the "Predict Sepal Length" button, the application uses the alreading exciting Spark Context to run the predict function and displays the predicted. This operations takes a shorter time than the initial launch of the shiny app.
+4. **Stage 4:** When you change the input values in the app and click the "Predict Sepal Length" button, the application uses the already exciting Spark Context to run the predict function and displays the predicted value. This operations takes a shorter time than the initial launch of the shiny app.
 
 ![Change values](img/new-result.png)
 
+## Moving Forward
+The objective of this first demo was to learn the use cases for SparkR and Shiny; and to see what happens underneath when you eventually deploy and run such an application on a PC.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In **Part II** of this tutorial, we shall see how to develop and deploy such an application for a "Big Data-Large Scale Analytics" problem on big data stored on multiple nodes of a cluster on AWS EC2. As we have already established this is one of the perfect use cases for SparkR and Shiny. 
 
