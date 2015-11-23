@@ -12,11 +12,11 @@ library(SparkR)
 sc <- sparkR.init(master = "local")
 sqlContext <- sparkRSQL.init(sc)
 
-#create a sparkR DataFrame for the "faithful" dataset
+#create a sparkR DataFrame for the "iris" dataset
 iris_DF <- createDataFrame(sqlContext, iris)
 cache(iris_DF)
 
-# Define server logic required to draw a histogram
+# Define server logic required to predict the sepal length
 shinyServer(function(input, output) {
 
   # Statistical machine learning
