@@ -11,12 +11,12 @@ The objective of this document is demonstrate how to use [Apache SparkR](http://
 
 **Shiny** is an open source R package that provides an elegant and powerful web framework for building web applications using R. Shiny helps you turn your analyses into interactive web applications without requiring HTML, CSS, or JavaScript knowledge. 
 
-# Uses Cases
-So you're probabling asking yourself, why would I need to use SparkR to run my Shiny applications?. That is a legitimate question and to answer it, we need to understand the different classes of big data problems.
+# Use Cases
+So you're probably asking yourself, "Why would I need to use SparkR to run my Shiny applications?". That is a legitimate question and to answer it, we need to understand the different classes of big data problems.
 
 ## Classes of Big Data Problems
 
-In a recent [AMA on Reddit](http://bit.ly/1LbWPhl), [Hadley Wickham]((http://had.co.nz/)(Chief Scientist at [https://www.rstudio.com/](RStudio)) painted a clearer picture of how "Big Data" should be defined. His insights will help us to define uses cases for SparkR and Shiny.
+In a recent [AMA on Reddit](http://bit.ly/1LbWPhl), [Hadley Wickham](http://had.co.nz/), Chief Scientist at [https://www.rstudio.com/](RStudio), painted a clearer picture of how "Big Data" should be defined. His insights will help us to define uses cases for SparkR and Shiny.
 
 I believe big data problems should be categrized in 3 main classes:
 

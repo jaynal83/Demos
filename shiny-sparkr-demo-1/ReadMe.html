@@ -67,12 +67,12 @@ img {
 <p><strong>SparkR</strong> is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. (similar to R data frames, dplyr) but on large datasets. SparkR also supports distributed machine learning using MLlib.</p>
 <p><strong>Shiny</strong> is an open source R package that provides an elegant and powerful web framework for building web applications using R. Shiny helps you turn your analyses into interactive web applications without requiring HTML, CSS, or JavaScript knowledge.</p>
 </div>
-<div id="uses-cases" class="section level1">
-<h1>Uses Cases</h1>
-<p>So you’re probabling asking yourself, why would I need to use SparkR to run my Shiny applications?. That is a legitimate question and to answer it, we need to understand the different classes of big data problems.</p>
+<div id="use-cases" class="section level1">
+<h1>Use Cases</h1>
+<p>So you’re probably asking yourself, “Why would I need to use SparkR to run my Shiny applications?”. That is a legitimate question and to answer it, we need to understand the different classes of big data problems.</p>
 <div id="classes-of-big-data-problems" class="section level2">
 <h2>Classes of Big Data Problems</h2>
-<p>In a recent <a href="http://bit.ly/1LbWPhl">AMA on Reddit</a>, [Hadley Wickham]((<a href="http://had.co.nz/" class="uri">http://had.co.nz/</a>)(Chief Scientist at <a href="RStudio"><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></a>) painted a clearer picture of how “Big Data” should be defined. His insights will help us to define uses cases for SparkR and Shiny.</p>
+<p>In a recent <a href="http://bit.ly/1LbWPhl">AMA on Reddit</a>, <a href="http://had.co.nz/">Hadley Wickham</a>, Chief Scientist at <a href="RStudio"><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></a>, painted a clearer picture of how “Big Data” should be defined. His insights will help us to define uses cases for SparkR and Shiny.</p>
 <p>I believe big data problems should be categrized in 3 main classes:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Big Data-Small Analytics:</strong> This is where a data scientist begins with a raw big dataset and then slices and dices that data to obtain the right sample required to answer a specific business/research problem. In most cases the resulting sample is a small dataset, which <strong>doesnot</strong> require SparkR to deploy a shiny application.</p></li>
