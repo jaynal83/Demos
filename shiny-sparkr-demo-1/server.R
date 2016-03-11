@@ -2,8 +2,8 @@
 library(shiny)
 
 # Set the system environment variables
-Sys.setenv(SPARK_HOME = "/home/emaasit/Desktop/Apache/spark-1.5.2")
-.libPaths(c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib"), .libPaths()))
+#Sys.setenv(SPARK_HOME = "/home/emaasit/Desktop/Apache/spark-1.5.2")
+#.libPaths(c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib"), .libPaths()))
 
 #load the Sparkr library
 library(SparkR)
@@ -13,7 +13,9 @@ sc <- sparkR.init(master = "local")
 sqlContext <- sparkRSQL.init(sc)
 
 #create a sparkR DataFrame for the "iris" dataset
-iris_DF <- createDataFrame(sqlContext, iris)
+irisdf <- iris
+colnames(irisdf) <- c("Sepal_Length", "Sepal_Width",  "Petal_Length", "Petal_Width",  "Species")
+iris_DF <- createDataFrame(sqlContext, irisdf)
 cache(iris_DF)
 
 # Define server logic required to predict the sepal length
@@ -45,6 +47,7 @@ shinyServer(function(input, output) {
       predicted_value <- predict(model_fit, newData = newDataFrame)
       
       unlist(head(select(predicted_value, "prediction")))
+      #head(predicted_value)
     })
   })
   
